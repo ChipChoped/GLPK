@@ -1,0 +1,21 @@
+data; 
+
+param nbItems := 5; 
+
+param costItem := 
+1 12
+2 15
+3 5
+4 16
+5 17; 
+
+param weightItem :=
+1 2
+2 6
+3 1
+4 7
+5 8; 
+
+param capacity := 20; 
+
+end; 

@@ -1,0 +1,289 @@
+
+graph-100-1.dat
+
+Time used:   12.5 secs
+Nombre de sommets dans la clique : 31
+
+
+graph-100-2.dat
+
+Time used:   12.0 secs
+Nombre de sommets dans la clique : 32
+
+
+graph-100-3.dat
+
+Time used:   37.7 secs
+Nombre de sommets dans la clique : 15
+
+
+graph-100-4.dat
+
+Time used:   10.6 secs
+Nombre de sommets dans la clique : 9
+
+
+graph-20-1.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans la clique : 12
+
+
+graph-20-2.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans la clique : 11
+
+
+graph-20-3.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans la clique : 7
+
+
+graph-20-4.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans la clique : 4
+
+
+graph-30-1.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans la clique : 16
+
+
+graph-30-2.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans la clique : 15
+
+
+graph-30-3.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans la clique : 9
+
+
+graph-30-4.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans la clique : 6
+
+
+graph-50-1.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans la clique : 21
+
+
+graph-50-2.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans la clique : 20
+
+
+graph-50-3.dat
+
+Time used:   0.2 secs
+Nombre de sommets dans la clique : 11
+
+
+graph-50-4.dat
+
+Time used:   0.2 secs
+Nombre de sommets dans la clique : 7
+
+
+graph-70-1.dat
+
+Time used:   0.1 secs
+Nombre de sommets dans la clique : 26
+
+
+graph-70-2.dat
+
+Time used:   0.5 secs
+Nombre de sommets dans la clique : 23
+
+
+graph-70-3.dat
+
+Time used:   2.8 secs
+Nombre de sommets dans la clique : 13
+
+
+graph-70-4.dat
+
+Time used:   2.6 secs
+Nombre de sommets dans la clique : 8
+
+
+graph-80-1.dat
+
+Time used:   1.4 secs
+Nombre de sommets dans la clique : 27
+
+
+graph-80-2.dat
+
+Time used:   0.4 secs
+Nombre de sommets dans la clique : 28
+
+
+graph-80-3.dat
+
+Time used:   6.5 secs
+Nombre de sommets dans la clique : 13
+
+
+graph-80-4.dat
+
+Time used:   3.1 secs
+Nombre de sommets dans la clique : 8
+
+
+graphCompl-100-1.dat
+
+Time used:   1.3 secs
+Nombre de sommets dans la clique : 4
+
+
+graphCompl-100-2.dat
+
+Time used:   2.0 secs
+Nombre de sommets dans la clique : 4
+
+
+graphCompl-100-3.dat
+
+Time used:   4.5 secs
+Nombre de sommets dans la clique : 6
+
+
+graphCompl-100-4.dat
+
+Time used:   12.6 secs
+Nombre de sommets dans la clique : 9
+
+
+graphCompl-20-1.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans la clique : 3
+
+
+graphCompl-20-2.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans la clique : 3
+
+
+graphCompl-20-3.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans la clique : 4
+
+
+graphCompl-20-4.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans la clique : 6
+
+
+graphCompl-30-1.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans la clique : 3
+
+
+graphCompl-30-2.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans la clique : 3
+
+
+graphCompl-30-3.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans la clique : 4
+
+
+graphCompl-30-4.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans la clique : 6
+
+
+graphCompl-50-1.dat
+
+Time used:   0.1 secs
+Nombre de sommets dans la clique : 3
+
+
+graphCompl-50-2.dat
+
+Time used:   0.1 secs
+Nombre de sommets dans la clique : 3
+
+
+graphCompl-50-3.dat
+
+Time used:   0.1 secs
+Nombre de sommets dans la clique : 5
+
+
+graphCompl-50-4.dat
+
+Time used:   0.1 secs
+Nombre de sommets dans la clique : 7
+
+
+graphCompl-70-1.dat
+
+Time used:   0.3 secs
+Nombre de sommets dans la clique : 3
+
+
+graphCompl-70-2.dat
+
+Time used:   0.3 secs
+Nombre de sommets dans la clique : 4
+
+
+graphCompl-70-3.dat
+
+Time used:   0.5 secs
+Nombre de sommets dans la clique : 6
+
+
+graphCompl-70-4.dat
+
+Time used:   1.0 secs
+Nombre de sommets dans la clique : 8
+
+
+graphCompl-80-1.dat
+
+Time used:   0.5 secs
+Nombre de sommets dans la clique : 4
+
+
+graphCompl-80-2.dat
+
+Time used:   0.4 secs
+Nombre de sommets dans la clique : 4
+
+
+graphCompl-80-3.dat
+
+Time used:   1.0 secs
+Nombre de sommets dans la clique : 6
+
+
+graphCompl-80-4.dat
+
+Time used:   2.1 secs
+Nombre de sommets dans la clique : 9
+
+

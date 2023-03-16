@@ -1,0 +1,22 @@
+
+//lancer un modèle avec ses donnees dans le .mod
+glpsol -m knapsackFullGLPK.mod 
+
+
+
+//lancer un modèle avec ses donnees externalisees dans un .dat
+
+glpsol -m knapsack.mod -d knapsack.dat
+
+glpsol -m knapsack.mod -d Data/kp-1000-1.dat
+
+
+//juste pour generer le fichier .lp sans resoudre
+glpsol -m knapsack.mod -d knapsack.dat --check --wlp knapsackLP.lp
+
+
+
+glpsol --lp knapsackLP.lp
+
+
+
