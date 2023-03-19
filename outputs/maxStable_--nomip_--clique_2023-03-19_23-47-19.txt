@@ -1,0 +1,289 @@
+
+graph-100-1.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 50
+
+
+graph-100-2.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 50
+
+
+graph-100-3.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 50
+
+
+graph-100-4.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 50
+
+
+graph-20-1.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 10
+
+
+graph-20-2.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 10
+
+
+graph-20-3.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 10
+
+
+graph-20-4.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 10
+
+
+graph-30-1.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 15
+
+
+graph-30-2.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 15
+
+
+graph-30-3.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 15
+
+
+graph-30-4.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 15
+
+
+graph-50-1.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 25
+
+
+graph-50-2.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 25
+
+
+graph-50-3.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 25
+
+
+graph-50-4.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 25
+
+
+graph-70-1.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 35
+
+
+graph-70-2.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 35
+
+
+graph-70-3.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 35
+
+
+graph-70-4.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 35
+
+
+graph-80-1.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 40
+
+
+graph-80-2.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 40
+
+
+graph-80-3.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 40
+
+
+graph-80-4.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 40
+
+
+graphCompl-100-1.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 50
+
+
+graphCompl-100-2.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 50
+
+
+graphCompl-100-3.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 50
+
+
+graphCompl-100-4.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 50
+
+
+graphCompl-20-1.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 12
+
+
+graphCompl-20-2.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 11
+
+
+graphCompl-20-3.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 10
+
+
+graphCompl-20-4.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 10
+
+
+graphCompl-30-1.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 16.5
+
+
+graphCompl-30-2.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 16
+
+
+graphCompl-30-3.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 15
+
+
+graphCompl-30-4.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 15
+
+
+graphCompl-50-1.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 25.5
+
+
+graphCompl-50-2.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 25
+
+
+graphCompl-50-3.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 25
+
+
+graphCompl-50-4.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 25
+
+
+graphCompl-70-1.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 35
+
+
+graphCompl-70-2.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 35
+
+
+graphCompl-70-3.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 35
+
+
+graphCompl-70-4.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 35
+
+
+graphCompl-80-1.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 40
+
+
+graphCompl-80-2.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 40
+
+
+graphCompl-80-3.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 40
+
+
+graphCompl-80-4.dat
+
+Time used:   0.0 secs
+Nombre de sommets dans le graphe stable : 40
+
+
