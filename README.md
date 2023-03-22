@@ -28,6 +28,11 @@
 
 > Dans de très grands graphes, le glouton donne des solutions plus grandes. Sûrement une erreur dans l'algorithme.
 
+> Plus N est grand, plus l'optimisation locale met du temps à être résolue
+
+> Dans la grande majorité des cas, l'optimisation locale donne une meilleure solution que le glouton.
+> Quand ceci n'est pas le cas, le problème peut être résolu en augmentant de façon raisonnable la valeur de N.
+
 #### Optimisation locale
 > Trier les nœuds par leur degré
 > Prendre les N premiers noeuds en candidats
