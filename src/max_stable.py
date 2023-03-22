@@ -111,7 +111,7 @@ def parse_graph(file: str) -> tuple[Graph, Graph]:
 
 
 def print_solution(name: str, vertices_number: int, solution: [int], status: OptimizationStatus, iteration_number: int,
-                   clock_time: float | None, cpu_time: float | None) -> None:
+                   clock_time: float, cpu_time: float) -> None:
     print("---", name, "---", "\n")
     print("Number of chosen vertices:", vertices_number)
     print("Found solution:", solution)
