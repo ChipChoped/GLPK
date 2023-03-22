@@ -71,12 +71,23 @@ class Graph:
             cpu_end = time.process_time()
             iterations_count += 1
 
+            to_remove = set()
+
             # Ajout des sommets sélectionnés dans la liste de sélection
             for i in range(len(candidates)):
                 if float(x[i].x) > 0.9:
                     selected.append(candidates[i])
+
+                    for j in order:
+                        if j in self.adjacent_vertices[candidates[i]]:
+                            to_remove.add(j)
+
+                    to_remove.add(candidates[i])
+
                     if len(selected) == n:
                         break
+
+            order = [r for r in order if r not in to_remove]
 
         return sorted(selected), status, iterations_count, clock_end - clock_start, cpu_end - cpu_start
 
