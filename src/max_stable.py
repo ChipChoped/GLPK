@@ -140,7 +140,7 @@ if __name__ == "__main__":
                    OptimizationStatus.FEASIBLE, 1, None, None)
     print_solution("Local optimization", len(solution_2), [i + 1 for i in solution_2], status, iteration_count, clock,
                    cpu)
-    print_solution("Local optimization", len(complement_solution_2), [i + 1 for i in complement_solution_2], status_,
+    print_solution("Complement local optimization", len(complement_solution_2), [i + 1 for i in complement_solution_2], status_,
                    iteration_count_, clock_, cpu_)
 
     # ok = set()
