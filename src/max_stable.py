@@ -1,6 +1,7 @@
 import sys
 import mip
 import time
+import random
 from mip import Model, MAXIMIZE, CBC, BINARY, OptimizationStatus
 
 
@@ -26,7 +27,7 @@ class Graph:
 
         return sorted(added_vertices)
 
-    def local_optimization(self, n: int) -> tuple[list[int], OptimizationStatus, int, float, float]:
+    def local_optimization(self, n: int, majDegree=False, orderRandom=False, orderMix=False) -> tuple[list[int], OptimizationStatus, int, float, float]:
         degrees = [len(self.adjacent_vertices[i]) for i in range(self.vertices_number)]
         order = sorted(range(self.vertices_number), key=lambda i: degrees[i])
         selected = []
@@ -38,6 +39,22 @@ class Graph:
         cpu_start = 0
         cpu_end = 0
 
+        if orderRandom:
+            random.shuffle(order)
+
+        if orderMix:
+            degre = [0 for i in order]
+            nMin=len(self.adjacent_vertices[0])
+            nMax=len(self.adjacent_vertices[0])
+            for voisin in self.adjacent_vertices:
+                if nMin>len(voisin):
+                    nMin=len(voisin)
+                if nMax<len(voisin):
+                    nMax=len(voisin)
+            for i in range(len(order)):
+                degre[i]=random.randint(0,int(0.5*(nMax-nMin)))
+            order = sorted(range(self.vertices_number), key=lambda i: degrees[i])
+            
         while True:
             candidates = []
 
@@ -89,8 +106,21 @@ class Graph:
 
             order = [r for r in order if r not in to_remove]
 
+            # Maj des degrées
+            if majDegree:
+                degrees=self.maj_degre(selected,order)
+                order = sorted(range(len(order)), key=lambda i: degrees[i])
+            
+
         return sorted(selected), status, iterations_count, clock_end - clock_start, cpu_end - cpu_start
 
+    def maj_degre(self,selected,order):
+        degre = [0 for i in order]
+        for i in order:
+            for voisin in self.adjacent_vertices[i]:
+                if voisin not in selected and voisin in order:
+                    degre[order.index(i)]+=1
+        return degre
 
 def read_file(file: str) -> tuple[int, list[tuple[int, int]]]:
     edges = []
@@ -121,8 +151,7 @@ def parse_graph(file: str) -> tuple[Graph, Graph]:
     return Graph(vertices_number, edges), Graph(vertices_number, all_edges - set(edges))
 
 
-def print_solution(name: str, vertices_number: int, solution: [int], status: OptimizationStatus, iteration_number: int,
-                   clock_time: float, cpu_time: float) -> None:
+def print_solution(name: str, vertices_number: int, solution: [int], status: OptimizationStatus, iteration_number: int,clock_time: float, cpu_time: float) -> None:
     print("---", name, "---", "\n")
     print("Number of chosen vertices:", vertices_number)
     print("Found solution:", solution)
@@ -141,22 +170,29 @@ if __name__ == "__main__":
     n = int(sys.argv[2])
 
     solution_1 = graph.greedy_algorithm()
-    complement_solution_1 = complement_graph.greedy_algorithm()
+    #complement_solution_1 = complement_graph.greedy_algorithm()
     solution_2, status, iteration_count, clock, cpu = graph.local_optimization(n)
-    complement_solution_2, status_, iteration_count_, clock_, cpu_ = complement_graph.local_optimization(n)
+    #complement_solution_2, status_, iteration_count_, clock_, cpu_ = complement_graph.local_optimization(n)
+    solution_3, status_3, iteration_count_3, clock_3, cpu_3 = graph.local_optimization(n,majDegree=True)
+    solution_4, status_4, iteration_count_4, clock_4, cpu_4 = graph.local_optimization(n,orderRandom=True)
+    solution_5, status_5, iteration_count_5, clock_5, cpu_5 = graph.local_optimization(n,orderMix=True)
 
-    print_solution("Greedy algorithm", len(solution_1), [i + 1 for i in solution_1], OptimizationStatus.FEASIBLE, 1,
-                   None, None)
-    print_solution("Complement greedy algorithm", len(complement_solution_1), [i + 1 for i in complement_solution_1],
-                   OptimizationStatus.FEASIBLE, 1, None, None)
-    print_solution("Local optimization", len(solution_2), [i + 1 for i in solution_2], status, iteration_count, clock,
-                   cpu)
-    print_solution("Complement local optimization", len(complement_solution_2), [i + 1 for i in complement_solution_2], status_,
-                   iteration_count_, clock_, cpu_)
+    
+    solRandom=[]
+    solMix=[]
+    for  i in range(30):
+        solution_6, status_6, iteration_count_6, clock_6, cpu_6 = graph.local_optimization(n,orderRandom=True)
+        solution_7, status_7, iteration_count_7, clock_7, cpu_7 = graph.local_optimization(n,orderMix=True)
+        solRandom.append(len(solution_6))
+        solMix.append(len(solution_7))
 
-    # ok = set()
-    # for i in sol2:
-    #     for j in sol2:
-    #         if j > i and j in graph.adjacent_vertices[i]:
-    #             ok.add(i)
-    # print(len(ok))
+    print_solution("Greedy algorithm", len(solution_1), [i + 1 for i in solution_1], OptimizationStatus.FEASIBLE, 1,None, None)
+    #print_solution("Complement greedy algorithm", len(complement_solution_1), [i + 1 for i in complement_solution_1],OptimizationStatus.FEASIBLE, 1, None, None)
+    print_solution("Local optimization", len(solution_2), [i + 1 for i in solution_2], status, iteration_count, clock,cpu)
+    #print_solution("Complement local optimization", len(complement_solution_2), [i + 1 for i in complement_solution_2], status_, iteration_count_, clock_, cpu_)
+    print_solution("Local optimization avec maj degree", len(solution_3), [i + 1 for i in solution_3], status_3, iteration_count_3, clock_3,cpu_3)
+    print_solution("Local optimization avec ordre de parcours random", len(solution_4), [i + 1 for i in solution_4], status_4, iteration_count_4, clock_4,cpu_4)
+    print_solution("Local optimization avec ordre mix randoom / degree", len(solution_5), [i + 1 for i in solution_5], status_5, iteration_count_5, clock_5,cpu_5)
+    print("Random 30 iter: ",solRandom)
+    print("Mix 30 iter: ",solMix)
+
