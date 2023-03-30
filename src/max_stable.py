@@ -114,13 +114,63 @@ class Graph:
 
         return sorted(selected), status, iterations_count, clock_end - clock_start, cpu_end - cpu_start
 
-    def maj_degre(self,selected,order):
+    def maj_degre(self, selected, order):
         degre = [0 for i in order]
         for i in order:
             for voisin in self.adjacent_vertices[i]:
                 if voisin not in selected and voisin in order:
                     degre[order.index(i)]+=1
         return degre
+
+    def tabu_search(self, init_stable, iterations: int, tabu_max_length: int, k: int = 1):
+        tabu_vertices = []
+        neighborhood = []
+
+        print(init_stable)
+
+        degrees = [len(self.adjacent_vertices[i]) for i in range(self.vertices_number)]
+        order = sorted(range(self.vertices_number), key=lambda i: degrees[i])
+
+        order = [r for r in order if r not in init_stable]
+
+        max_stable = init_stable.copy()
+
+        for i in range(iterations):
+            found_vertex = False
+
+            for u in order:
+                if all(u not in self.adjacent_vertices[v] for v in init_stable) and u not in tabu_vertices:
+                    init_stable.append(u)
+                    del order[order.index(u)]
+                    found_vertex = True
+                    break
+
+            if not found_vertex:
+                if len(tabu_vertices) == tabu_max_length:
+                    tabu_vertices.pop(0)
+                    order = sorted(range(self.vertices_number), key=lambda i: degrees[i])
+                    order = [r for r in order if r not in init_stable]
+                    order = [r for r in order if r not in tabu_vertices]
+
+                rand = random.randint(0, len(init_stable) - 1)
+                tabu_vertices.append(init_stable[rand])
+                del init_stable[rand]
+
+            if len(init_stable) > len(max_stable):
+                max_stable = init_stable.copy()
+
+        return max_stable
+
+    def verif_stable(self, solution):
+        vertices = range(self.vertices_number)
+        vertices = [r for r in vertices if r not in solution]
+
+        for v in solution:
+            if all(v in self.adjacent_vertices[u] for u in vertices):
+                return False
+
+        return True
+
 
 def read_file(file: str) -> tuple[int, list[tuple[int, int]]]:
     edges = []
@@ -170,29 +220,38 @@ if __name__ == "__main__":
     n = int(sys.argv[2])
 
     solution_1 = graph.greedy_algorithm()
-    #complement_solution_1 = complement_graph.greedy_algorithm()
+
+    tabu_solution = graph.tabu_search(solution_1, 500, 5)
+
+    #
+    # #complement_solution_1 = complement_graph.greedy_algorithm()
     solution_2, status, iteration_count, clock, cpu = graph.local_optimization(n)
-    #complement_solution_2, status_, iteration_count_, clock_, cpu_ = complement_graph.local_optimization(n)
-    solution_3, status_3, iteration_count_3, clock_3, cpu_3 = graph.local_optimization(n,majDegree=True)
-    solution_4, status_4, iteration_count_4, clock_4, cpu_4 = graph.local_optimization(n,orderRandom=True)
-    solution_5, status_5, iteration_count_5, clock_5, cpu_5 = graph.local_optimization(n,orderMix=True)
-
-    
-    solRandom=[]
-    solMix=[]
-    for  i in range(30):
-        solution_6, status_6, iteration_count_6, clock_6, cpu_6 = graph.local_optimization(n,orderRandom=True)
-        solution_7, status_7, iteration_count_7, clock_7, cpu_7 = graph.local_optimization(n,orderMix=True)
-        solRandom.append(len(solution_6))
-        solMix.append(len(solution_7))
-
+    # #complement_solution_2, status_, iteration_count_, clock_, cpu_ = complement_graph.local_optimization(n)
+    # solution_3, status_3, iteration_count_3, clock_3, cpu_3 = graph.local_optimization(n,majDegree=True)
+    # solution_4, status_4, iteration_count_4, clock_4, cpu_4 = graph.local_optimization(n,orderRandom=True)
+    # solution_5, status_5, iteration_count_5, clock_5, cpu_5 = graph.local_optimization(n,orderMix=True)
+    #
+    #
+    # solRandom=[]
+    # solMix=[]
+    # for  i in range(30):
+    #     solution_6, status_6, iteration_count_6, clock_6, cpu_6 = graph.local_optimization(n,orderRandom=True)
+    #     solution_7, status_7, iteration_count_7, clock_7, cpu_7 = graph.local_optimization(n,orderMix=True)
+    #     solRandom.append(len(solution_6))
+    #     solMix.append(len(solution_7))
+    #
     print_solution("Greedy algorithm", len(solution_1), [i + 1 for i in solution_1], OptimizationStatus.FEASIBLE, 1,None, None)
-    #print_solution("Complement greedy algorithm", len(complement_solution_1), [i + 1 for i in complement_solution_1],OptimizationStatus.FEASIBLE, 1, None, None)
+    # #print_solution("Complement greedy algorithm", len(complement_solution_1), [i + 1 for i in complement_solution_1],OptimizationStatus.FEASIBLE, 1, None, None)
     print_solution("Local optimization", len(solution_2), [i + 1 for i in solution_2], status, iteration_count, clock,cpu)
-    #print_solution("Complement local optimization", len(complement_solution_2), [i + 1 for i in complement_solution_2], status_, iteration_count_, clock_, cpu_)
-    print_solution("Local optimization avec maj degree", len(solution_3), [i + 1 for i in solution_3], status_3, iteration_count_3, clock_3,cpu_3)
-    print_solution("Local optimization avec ordre de parcours random", len(solution_4), [i + 1 for i in solution_4], status_4, iteration_count_4, clock_4,cpu_4)
-    print_solution("Local optimization avec ordre mix randoom / degree", len(solution_5), [i + 1 for i in solution_5], status_5, iteration_count_5, clock_5,cpu_5)
-    print("Random 30 iter: ",solRandom)
-    print("Mix 30 iter: ",solMix)
+    # #print_solution("Complement local optimization", len(complement_solution_2), [i + 1 for i in complement_solution_2], status_, iteration_count_, clock_, cpu_)
+    # print_solution("Local optimization avec maj degree", len(solution_3), [i + 1 for i in solution_3], status_3, iteration_count_3, clock_3,cpu_3)
+    # print_solution("Local optimization avec ordre de parcours random", len(solution_4), [i + 1 for i in solution_4], status_4, iteration_count_4, clock_4,cpu_4)
+    # print_solution("Local optimization avec ordre mix randoom / degree", len(solution_5), [i + 1 for i in solution_5], status_5, iteration_count_5, clock_5,cpu_5)
+    # print("Random 30 iter: ",solRandom)
+    # print("Mix 30 iter: ",solMix)
 
+    print([i + 1 for i in tabu_solution])
+
+    print(graph.verif_stable(solution_1))
+    print(graph.verif_stable(solution_2))
+    print(graph.verif_stable(tabu_solution))
